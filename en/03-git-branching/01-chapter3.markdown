@@ -22,7 +22,7 @@ Your Git repository now contains five objects: one blob for each of your three f
 Insert 18333fig0301.png
 Figure 3-1. Single commit repository data.
 
-If you make some changes and commit again, the next commit stores a pointer to the commit that came immediately before it. After two more commits, your history might look something like Figure 3-2.
+If you make some changes and commit again, the next commit will store a pointer to the commit that came immediately before it. After two more commits, your history might look something like Figure 3-2.
 
 Insert 18333fig0302.png
 Figure 3-2. Git object data for multiple commits.
