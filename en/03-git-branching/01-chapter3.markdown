@@ -2,15 +2,15 @@
 
 Nearly every VCS has some form of branching support. Branching means you diverge from the main line of development and continue to do work without messing with that main line. In many VCS tools, this is a somewhat expensive process, often requiring you to create a new copy of your source code directory, which can take a long time for large projects.
 
-Some people refer to the branching model in Git as its “killer feature”  , and it certainly sets Git apart in the VCS community. Why is it so special? The way Git branches is incredibly lightweight, making branching operations nearly instantaneous and switching back and forth between branches generally just as fast. Unlike many other VCSs, Git encourages a workflow that branches and merges often, even multiple times in a day. Understanding and mastering this feature gives you a powerful and unique tool and can literally change the way that you develop.
+Some people refer to Git's branching model as its “killer feature”  , and it certainly sets Git apart from other VCSs. Why is it so special? The way Git branches is incredibly lightweight, so creating new branches or switching between branches is fast. Unlike many other VCSs, Git encourages a workflow that branches and merges often, even multiple times in a day. Understanding and mastering this feature can change the way that you code.
 
 ## What a Branch Is ##
 
-To really understand the way Git does branching, we need to take a step back and examine how Git stores its data. As you may remember from Chapter 1, Git doesn’t store data as a series of changesets or deltas, but instead as a series of [snapshots](http://git-scm.com/book/en/Getting-Started-Git-Basics#Snapshots,-Not-Differences).
+To really understand the way Git does branching, let's reexamine how Git stores its data. As you may remember from Chapter 1, Git doesn’t store data as a series of changesets or deltas, but instead as a series of [snapshots](http://git-scm.com/book/en/Getting-Started-Git-Basics#Snapshots,-Not-Differences).
 
-When you commit in Git, Git stores a commit object that contains a pointer to the snapshot of the content you staged, the author and message metadata, and zero or more pointers to the commit or commits that were the direct parents of this commit: zero parents for the first commit, one parent for a normal commit, and multiple parents for a commit that results from a merge of two or more branches.
+When you commit in Git, Git stores an object that contains: a pointer to the snapshot of the content you staged, the author and message metadata, and zero or more pointers to the parent(s) of this commit. Initial commits have zero parents. Normal commits have one parent. Merging two or more branches results in multiple parents.
 
-To visualize this, imagine that you have a directory containing three files. You stage them all and commit. Staging the files [checksums](http://git-scm.com/book/en/Getting-Started-Git-Basics#Git-Has-Integrity "the SHA-1 hash we mentioned in Chapter 1") each one, stores a snapshot of the file as a "blob" in the `./.git` repository, and adds that checksum to the staging area:
+To visualize this, imagine that you have a directory containing three files. You stage them all and commit. Staging the files [checksums](http://git-scm.com/book/en/Getting-Started-Git-Basics#Git-Has-Integrity "using the SHA-1 hash we mentioned in Chapter 1") each one, stores a snapshot of the file as a "blob" in the Git repository, and adds that checksum to the staging area:
 
 	$ git add README test.rb LICENSE
 	$ git commit -m 'initial commit of my project'
