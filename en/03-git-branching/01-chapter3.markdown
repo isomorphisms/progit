@@ -29,7 +29,7 @@ Figure 3-2. Git object data for multiple commits.
 
 A branch in Git is a movable pointer, pointing to one of these commit objects. Every time you commit, the branch (the pointer) moves forward. So if all you ever did was commit, the branch would always point to the most recent commit object.
 
-The default branch name in Git is `master`. If all you ever did was commit, the pointer (the branch) would still be named `master`.
+The default branch (pointer) name in Git is `master`.
 
 Insert 18333fig0303.png
 Figure 3-3. Branch pointing into the commit data’s history.
