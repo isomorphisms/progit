@@ -15,7 +15,7 @@ To visualize this, imagine that you have a directory containing three files. You
 	$ git add README test.rb LICENSE
 	$ git commit -m 'initial commit of my project'
 
-Running `git commit` checksums all project directories and stores them as `tree` objects in the Git repository. Git then creates a `commit` object that has the metadata and a pointer to the root `tree` so it can re-create that snapshot when needed.
+Running `git commit` checksums all project directories and stores them as `tree` objects in the Git repository. Git then creates a `commit` object containing metadata and a pointer to the project's root `tree` so Git can re-create that snapshot when needed.
 
 Your Git repository now contains five objects: one blob for the contents of each of your three files, one tree that lists the contents of the directory and specifies which file names are stored as which blobs, and one commit with the pointer to that root tree and all the commit metadata. Conceptually, the data in your Git repository looks something like Figure 3-1.
 
